@@ -1,356 +1,240 @@
-const botao01 = document.querySelector('#ex01')
-const botao02 = document.querySelector('#ex02')
-const botao03 = document.querySelector('#ex03')
-const botao04 = document.querySelector('#ex04')
-const botao05 = document.querySelector('#ex05')
-const botao06 = document.querySelector('#ex06')
-const botao07 = document.querySelector('#ex07')
-const botao08 = document.querySelector('#ex08')
-const botao09 = document.querySelector('#ex09')
-const botao10 = document.querySelector('#ex10')
-const botao11 = document.querySelector('#ex11')
-const botao12 = document.querySelector('#ex12')
-const botao13 = document.querySelector('#ex13')
-const botao14 = document.querySelector('#ex14')
-const botao15 = document.querySelector('#ex15')
-const res = document.querySelector('.res')
+const btnEx01 = document.querySelector("#ex01")
+const btnEx02 = document.querySelector("#ex02")
+const btnEx03 = document.querySelector("#ex03")
+const btnEx04 = document.querySelector("#ex04")
+const btnEx05 = document.querySelector("#ex05")
+const btnEx06 = document.querySelector("#ex06")
+const btnEx07 = document.querySelector("#ex07")
+const btnEx08 = document.querySelector("#ex08")
+const btnEx09 = document.querySelector("#ex09")
+const btnEx10 = document.querySelector("#ex10")
+const btnEx11 = document.querySelector("#ex11")
+const btnEx12 = document.querySelector("#ex12")
+const btnEx13 = document.querySelector("#ex13")
+const btnEx14 = document.querySelector("#ex14")
+const btnEx15 = document.querySelector("#ex15")
 
-function limparDiv() {
-    res.innerHTML = " "
+function ex01() {
+    let i = 1;
+
+    do {
+        console.log(i);
+        i++;
+    } while (i <= 10);
+
 }
+btnEx01.addEventListener('click', ex01)
 
-const exercicio01 = botao01.addEventListener('click', () => {
-    /*  Faça um programa que exiba os números de 1 a 10 usando o loop "do-while". */
-
-    limparDiv()
-
-    let contadora = 1
-
-    do {
-        res.innerHTML += contadora + "<br>"
-        contadora++
-    }
-    while (contadora < 11)
-})
-
-const exercicio02 = botao02.addEventListener('click', () => {
-
-    limparDiv()
-
-    /* Escreva um programa que calcule a soma dos números de 1 a 100 usando o loop "do-while". */
-
-    let contadora = 1
-    let soma = 0
-
-    do {
-        soma += contadora
-        contadora++
-    }
-    while (contadora < 101)
-
-    res.innerHTML = "O valor da soma dos números de 1 a 100 é: " + soma
-
-})
-
-const exercicio03 = botao03.addEventListener('click', () => {
-
-    limparDiv()
-
-    /*Crie um programa que exiba os números pares de 1 a 50 usando o loop "do-while".*/
-
-    let contadora = 1
-
-    do {
-        if (contadora % 2 == 0) {
-            res.innerHTML += contadora + "<br>"
-        }
-        contadora++
-    }
-    while (contadora < 51)
-})
-
-const exercicio04 = botao04.addEventListener('click', () => {
-
-    limparDiv()
-
-    /* Faça um programa que leia 5 números inteiros usando o loop "do-while" e exiba a média aritmética dos valores lidos. */
-
-    let contadora = 1
-    let soma = 0
-
-    do {
-        let numero = Number(prompt(`Digite o ${contadora}º número: `))
-        soma += numero
-        contadora++
-    } while (contadora < 6)
-
-    let media = soma / (contadora - 1)
-
-    res.innerHTML = (`Sua média dos 5 valores digitados é: ${media}`)
-
-
-})
-
-const exercicio05 = botao05.addEventListener('click', () => {
-
-    limparDiv()
-
-    /*Escreva um programa que leia um número inteiro e exiba a tabuada desse número até o décimo valor usando o loop "do-while".*/
-
-    let contadora = 1
-    let numero = parseInt(prompt("Digite um número: "))
-
-    do {
-        res.innerHTML += (`${numero} X ${contadora} = ${numero * contadora}`) + "<br>"
-        contadora++
-    } while (contadora < 11)
-
-})
-
-const exercicio06 = botao06.addEventListener('click', () => {
-
-    limparDiv()
-
-    /*Crie um programa que leia um número inteiro positivo e exiba todos os divisores desse número usando o loop "do-while".*/
-
-    let contadora = 1
-
-    let numero = parseInt(prompt("Digite um número: "))
-
-    do {
-
-        if (numero % contadora == 0) {
-            res.innerHTML += contadora + "<br>"
-        }
-        contadora++
-    }
-    while (contadora <= numero)
-
-})
-
-const exercicio07 = botao07.addEventListener('click', () => {
-
-    limparDiv()
-
-    /* Faça um programa que leia um número inteiro e exiba se ele é um número primo usando o loop "do-while". */
-
-    let contadora = 2
-    let primo = true
-
-    let numero = parseInt(prompt("Digite um valor: "))
-
-    do {
-        if (numero % contadora == 0) {
-            primo = false
-            break
-        }
-
-        contadora++
-
-    }
-
-    while (contadora < numero)
-
-    if (primo) {
-        res.innerHTML = `número ${numero} é primo.`
-    }
-
-    else {
-        res.innerHTML = `número ${numero} não é primo.`
-    }
-
-})
-
-const exercicio08 = botao08.addEventListener('click', () => {
-
-    limparDiv()
-
-    /* Escreva um programa que leia um número inteiro e exiba a sequência de Fibonacci até o número lido usando o loop "do-while".*/
-
-    let ultimoNumero = 0
-    let penultimoNumero = 1
-    let contadora = 1
-
-    let numero = parseInt(prompt("Digite um valor: "))
-
-    do {
-
-        res.innerHTML += ultimoNumero + "<br>"
-
-        let numeroAtual = ultimoNumero + penultimoNumero
-
-        penultimoNumero = ultimoNumero
-        ultimoNumero = numeroAtual
-
-        contadora++
-    }
-    while (contadora <= numero)
-
-
-})
-
-const exercicio09 = botao09.addEventListener('click', () => {
-
-    limparDiv()
-
-    /* Crie um programa que leia o nome e a idade de 5 pessoas usando o loop "do-while" e exiba a média das idades. */
-
-    let nome = prompt("Digite o nome dessa pessoa: ")
-    let idade = parseInt(prompt(`Digite a idade da pessoa ${nome}: `))
-
-    let soma = + idade
-    let contadora = 1
-    const divisor = 5
-
-    do {
-        nome = prompt("Digite o nome dessa pessoa: ")
-        idade = parseInt(prompt(`Digite a idade da pessoa ${nome}: `))
-
-        soma = + idade
-    }
-    while (contadora <= 5)
-
-    let media = soma / divisor
-
-    res.innerHTML = `A média dessas idades é ${media}`
-})
-
-const exercicio10 = botao10.addEventListener('click', () => {
-
-    limparDiv()
-
-    /*Faça um programa que exiba os primeiros 20 números da sequência de Fibonacci usando o loop "do-while".*/
-
-    let penultimoNumero = 0
-    let ultimoNumero = 1
-    let contadora = 1
-
-    do {
-
-        res.innerHTML += `${contadora}º - ${penultimoNumero}` + "<br>"
-
-        let numeroAtual = penultimoNumero + ultimoNumero
-
-        ultimoNumero = penultimoNumero
-        penultimoNumero = numeroAtual
-
-        contadora++
-    }
-    while (contadora <= 20)
-
-})
-
-const exercicio11 = botao11.addEventListener('click', () => {
-
-    limparDiv()
-
-    /* Escreva um programa que leia um número inteiro e exiba a soma de todos os números pares entre 1 e o número lido usando o loop "do-while". */
-
-    let contadora = 1
-    let soma = 0
-    let numero = parseInt(prompt("Digite um valor: "))
-
-    do {
-
-        if (contadora % 2 == 0) {
-            soma += contadora
-            res.innerHTML += contadora + "<br>"
-        }
-
-        contadora++
-    } while (contadora <= numero)
-    res.innerHTML += `A soma dos números pares de 1 a ${numero} é ${soma}`
-
-})
-
-const exercicio12 = botao12.addEventListener('click', () => {
-
-    limparDiv()
-
-    /*Crie um programa que exiba os números ímpares de 1 a 50 usando o loop "do-while". */
-
-    let contadora = 1
-    let contadoraImpar = 1
-
-    do {
-        if (contadora % 2 == 1) {
-            res.innerHTML += `${contadoraImpar}º - ` + contadora + "<br>"
-            contadoraImpar++
-        }
-        contadora++
-    } while (contadora <= 50)
-})
-
-const exercicio13 = botao13.addEventListener('click', () => {
-
-    limparDiv()
-
-    /*Faça um programa que leia um número inteiro e exiba os seus dígitos separadamente usando o loop "do-while".*/
-
-    let numero = parseInt(prompt("Digite um número: "))
-    let numeroString = numero.toString()
-    let contadora = 0
-
-
-    do {
-
-        res.innerHTML += numeroString.charAt(contadora) + "<br>"
-        contadora++
-    }
-    while (contadora < numeroString.length)
-
-})
-
-const exercicio14 = botao14.addEventListener('click', () => {
-
-    limparDiv()
-
-    /*Escreva um programa que calcule o fatorial de um número inteiro inserido pelo usuário usando o loop "do-while".*/
-
-    let numero = parseInt(prompt("Digite um número: "))
-    let contadora = 1
-    let fatorial = 1
-
-    do {
-        
-        fatorial = fatorial * contadora
-        contadora++
-        
-    }
-    while (contadora <= numero)
-        res.innerHTML += fatorial 
-
-})
-
-const exercicio15 = botao15.addEventListener('click', () => {
-
-    limparDiv()
-
-    let contadora = 0;
+function ex02() {
+    let num = 1;
     let soma = 0;
-    let nome = "";       
-    let nomeGrande = "";  
 
     do {
-        nome = prompt(`Digite um nome (ou "fim" para parar):`);
-        nomeGrande = nome.toUpperCase();
+        soma += num;
+        num++;
+    } while (num <= 100);
 
-        if (nomeGrande != "FIM") {
-            
-            let idade = parseInt(prompt(`Digite a idade de ${nome}:`));
-            
-            soma += idade;
-            contadora++;      
-        }
-        
-    } 
-    while (nomeGrande != "FIM");
+    console.log("Soma =", soma);
 
-    if (contadora > 0) {
-        let media = soma / contadora;
-        res.innerHTML = `A média das ${contadora} idades é ${media}.`;
+}
+btnEx02.addEventListener('click', ex02)
+
+function ex03() {
+    let n = 1;
+
+    do {
+        if (n % 2 === 0) console.log(n);
+        n++;
+    } while (n <= 50);
+
+}
+btnEx03.addEventListener('click', ex03)
+
+function ex04() {
+    let contador = 1;
+    let total = 0;
+
+    do {
+        let valor = Number(prompt(`Digite o ${contador}º número:`));
+        total += valor;
+        contador++;
+    } while (contador <= 5);
+
+    console.log("Média =", total / 5);
+
+}
+btnEx04.addEventListener('click', ex04)
+
+function ex05() {
+    let numero = Number(prompt("Digite um número:"));
+    let x = 1;
+
+    do {
+        console.log(`${numero} x ${x} = ${numero * x}`);
+        x++;
+    } while (x <= 10);
+
+}
+btnEx05.addEventListener('click', ex05)
+
+function ex06() {
+    let valor = Number(prompt("Digite um número inteiro positivo:"));
+    let d = 1;
+
+    do {
+        if (valor % d === 0) console.log(d);
+        d++;
+    } while (d <= valor);
+
+}
+btnEx06.addEventListener('click', ex06)
+
+function ex07() {
+    let numPrimo = Number(prompt("Digite um número:"));
+    let divisor = 1;
+    let qtdDiv = 0;
+
+    do {
+        if (numPrimo % divisor === 0) qtdDiv++;
+        divisor++;
+    } while (divisor <= numPrimo);
+
+    if (qtdDiv === 2) console.log("É primo");
+    else console.log("Não é primo");
+
+}
+btnEx07.addEventListener('click', ex07)
+
+function ex08() {
+    let limite = Number(prompt("Digite um número limite:"));
+
+    let a = 0, b = 1;
+
+    console.log(a);
+    console.log(b);
+
+    let proximo;
+
+    do {
+        proximo = a + b;
+        if (proximo > limite) break;
+        console.log(proximo);
+        a = b;
+        b = proximo;
+    } while (true);
+
+}
+btnEx08.addEventListener('click', ex08)
+
+function ex09() {
+    let c = 1;
+    let somaIdades = 0;
+
+    do {
+        let nome = prompt(`Digite o nome da ${c}ª pessoa:`);
+        let idade = Number(prompt(`Digite a idade de ${nome}:`));
+
+        somaIdades += idade;
+        c++;
+    } while (c <= 5);
+
+    console.log("Média das idades =", somaIdades / 5);
+
+}
+btnEx09.addEventListener('click', ex09)
+
+function ex10() {
+    let i2 = 1;
+    let a2 = 0, b2 = 1;
+
+    console.log(a2);
+    console.log(b2);
+
+    do {
+        let prox = a2 + b2;
+        console.log(prox);
+        a2 = b2;
+        b2 = prox;
+        i2++;
+    } while (i2 <= 18); // já mostramos 2 números
+
+}
+btnEx10.addEventListener('click', ex10)
+
+function ex11() {
+    let limite2 = Number(prompt("Digite um número:"));
+    let somaPar = 0;
+    let k = 1;
+
+    do {
+        if (k % 2 === 0) somaPar += k;
+        k++;
+    } while (k <= limite2);
+
+    console.log("Soma dos pares =", somaPar);
+
+}
+btnEx11.addEventListener('click', ex11)
+
+function ex12() {
+    let j = 1;
+
+    do {
+        if (j % 2 !== 0) console.log(j);
+        j++;
+    } while (j <= 50);
+
+}
+btnEx12.addEventListener('click', ex12)
+
+function ex13() {
+    let dig = prompt("Digite um número:");
+    let idx = 0;
+
+    do {
+        console.log(dig[idx]);
+        idx++;
+    } while (idx < dig.length);
+
+}
+btnEx13.addEventListener('click', ex13)
+
+function ex14() {
+    let f = Number(prompt("Digite um número:"));
+    let fat = 1;
+    let y = 1;
+
+    do {
+        fat *= y;
+        y++;
+    } while (y <= f);
+
+    console.log(`Fatorial de ${f} = ${fat}`);
+
+}
+btnEx14.addEventListener('click', ex14)
+
+function ex15() {
+    let somaI = 0;
+    let cont = 0;
+    let nome2;
+
+    do {
+        nome2 = prompt("Digite o nome (ou 'fim' para encerrar):");
+
+        if (nome2.toLowerCase() === "fim") break;
+
+        let idade2 = Number(prompt("Digite a idade:"));
+        somaI += idade2;
+        cont++;
+
+    } while (true);
+
+    if (cont > 0) {
+        console.log("Média das idades =", somaI / cont);
     } else {
-        res.innerHTML = "Nenhuma idade foi inserida.";
+        console.log("Nenhuma idade foi informada.");
     }
-})
 
+}
+btnEx15.addEventListener('click', ex15)
